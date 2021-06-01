@@ -43,7 +43,6 @@ public class PersonService {
     }
 
     public PersonDTO findById(Long id) throws PersonNotFoundException {
-//        Optional<Person> optionalPerson = personRepository.findById(id);
         Person person = personRepository.findById(id)
                 .orElseThrow(() -> new PersonNotFoundException(id));
 
